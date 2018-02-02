@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>温故而知新</title>
+    <meta charset="UTF-8"/>
+    <script type="text/javascript" src="highlight-plugin/scripts/shCore.js"></script>
+    <script type="text/javascript" src="highlight-plugin/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="highlight-plugin/scripts/shBrushPhp.js"></script>
+    <link type="text/css" rel="stylesheet" href="highlight-plugin/styles/shCore.css"/>
+    <link type="text/css" r el="stylesheet" href="highlight-plugin/styles/shThemeDefault.css"/>
+    <link type="text/css" rel="stylesheet" href="pubfile/faq-clientlibs.css">
+    <link type="text/css" rel="stylesheet" href="pubfile/bootstrap.css">
+    <style>
+        .bg-red{background-color:red;width:100px;height:100px;position:fixed;top:0px;left:0px;box-sizing: border-box;color:yellow;text-align:center;cursor:pointer;padding-top:5px;z-index:99999;}
+        #show{border:1px solid red;padding:15px;  }
+        .border-red{
+          border:1px solid red;
+          padding: 15px;
+        }
+        .border-blue{
+          border:1px solid blue;
+          padding: 15px;
+        }
+        a:focus{color:red;}
+        .plane {
+        position: fixed;
+        left: 100%;
+        top: 20px;
+        -webkit-animation: fly 10s linear infinite alternate;
+        -moz-animation: fly 10s linear infinite alternate;
+        -o-animation: fly 10s linear infinite alternate;
+        animation: fly 10s linear infinite alternate;
+        }
+        @keyframes fly {
+        0%{
+            left: 100%;
+        }
+
+        100%{
+            left: -100px;
+        }
+
+        }
+
+        .animate-fadeIn{
+        animation-name:animate-fadeIn;
+        -webkit-animation-name:animate-fadeIn;
+        -webkit-animation-duration:3s;
+        animation-duration:3s;
+        animation-fill-mode: forwards;
+        }
+        .animate-fadeIn.delay{
+        -webkit-animation-delay:0.5s;
+        animation-delay:0.5s;
+        }
+        @-webkit-keyframes animate-fadeIn{
+        0%{
+        opacity:0;
+        }
+
+        100%{
+        opacity:1;
+        }
+        }
+        @keyframes animate-fadeIn {
+        0%{
+        opacity:0;
+        }
+        100%{
+        opacity:1;
+        }
+        }
+        body{
+        padding: 20px 100px 50px;
+        }
+        .red{color:red;}
+        .fadeInLeft_1 {
+            -webkit-animation-name: fadeInLeft_1;
+            animation-name: fadeInLeft_1;
+        }
+        .animated_1 {
+            background: url(https://www-auth-webex.cisco.com/content/dam/ciscospark/eopi/country/usa/spark-care/03-chat-feedback-dialog.png) no-repeat;
+            background-size: 322px 416px;
+            width: 322px;
+            height: 416px;
+            margin-top: 30px;
+            position: absolute;
+            animation-delay: 1s;
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            z-index: 996;
+        }
+
+        @keyframes fadeInLeft_1 {
+            0% {
+                transform: translateX(175px);
+            }
+            100% {
+                transform: translateY(-25px);
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = 'highlight-plugin/scripts/clipboard.swf';
+        SyntaxHighlighter.config.strings = {
+            expandSource : '展开代码',
+            viewSource : '查看代码',
+            copyToClipboard : '复制代码',
+            copyToClipboardConfirmation : '代码复制成功',
+            print : '打印',
+            help: '?',
+            alert: '语法高亮\n\n',
+            noBrush: '不能找到刷子: ',
+            brushNotHtmlScript: '刷子没有配置html-script选项',
+
+        };
+        SyntaxHighlighter.defaults= {
+//            'collapse':true,
+            'gutter':false,
+            'toolbar' : false,
+        };
+        SyntaxHighlighter.all();
+    </script>
+</head>
+<body>
+
+    <div class="animated_1 fadeInLeft_1 tststts" style="display: none;">dddddddddddddddddddd</div>
+    <h2>温故而知新</h2>
+    <div id="dragArea" class="bg-red">哎嘿嘿，我可以拖动哦<br>(*要特别注意offerset这个属性噢)</div>
+    <!-- 逻辑运算测试块 -->
+    <div id="show"><h3>&& 和 || 逻辑运算的妙用 </h3><br/></div>
+    <!-- 逻辑运算测试块结束 -->
+    <!-- 委托事件测试块 -->
+    <pre>/*  1，什么是事件委托：通俗的讲，事件就是onclick，onmouseover，onmouseout，等就是事件，委托呢，就是让别人来做，
+    这个事件本来是加在某些元素上的，然而你却加到别人身上来做，完成这个事件。
+
+    也就是：利用冒泡的原理，把事件加到父级上，触发执行效果。
+
+    好处呢：1，提高性能。*/
+    /*
+    js事件委托:note
+    这里注意：on()事件，如果是$("ele child").on('click')是绑定事件，动态添加的元素是没有相应的事件触发
+    而$("ele").on('click','child')即事件委托，动态元素也可以触发对应的绑定事件
+    */
+    /*
+    * 补充笔记：事件委托是根据冒泡的原理；
+    * 与冒泡(bubble)相反的事件是事件捕获(captrue);
+    * 捕获阶段是一个和冒泡阶段完全相反的过程，即事件由祖先元素向子元素传播，和一个石子儿从水面向水底下沉一样，
+    * 要说明的是在 IE，opera浏览器中，是不存在这个阶段的。从各浏览器提供的注册事件监听的方法中可见一斑，
+    * 例如适用于ie,opera的attachEvent， 有两个参数，attachEvent(”on”+type,fn)，
+    * 而适用于所谓标准浏览器的addEventListener则有三个参 数，addEventListener(type,fn,boolean)，
+    * 前面两个参数不用解释，第三个参数boolean，就是决定注册事件发生在捕获阶段还是冒泡阶段，具体参考如下：
+    * */
+    </pre>
+    <div style="border:1px solid blue;padding:15px; ">
+    <h3>委托事件测试块</h3>
+    <div id="weituo"><p>11</p><p>22</p><p>33</p><p>44</p></div>
+    <div id="add-weituo">添加被委托元素</div>
+    </div>
+    <!-- 委托事件测试块结束 -->
+    <!--对象克隆-->
+    <div class="blue">
+        <pre>
+        JavaScript中并没有直接提供对象复制(Object Clone)的方法。因此下面的代码中改变对象b的时候，也就改变了对象a。
+        NOTE:这个和jquery 的 .clone() 是不同的，jquery的clone()是克隆 DOM 的
+            a = {k1:1, k2:2, k3:3};
+            b = a;
+            b.k2 = 4;
+        如果只想改变b而保持a不变，就需要对对象a进行复制。
+        用jQuery进行对象复制
+        在可以使用jQuery的情况下，jQuery自带的extend方法可以用来实现对象的复制。
+            a = {k1:1, k2:2, k3:3};
+            b = {};
+            $.extend(b,a);
+        自定义clone()方法来实现对象复制
+        用extend()方法：拓展就是可以将一个或者多个拓展到某个对象属性上,形成一个并集的效果，这里如果是讲空对象，拓展到某个对象就相当于克隆
+
+
+        下面的方法，是对象复制的基本想法。
+            Object.prototype.clone = function() {
+             var copy = (this instanceof Array) ? [] : {};
+             for (attr in this) {
+              if (!obj.hasOwnProperty(attr)) continue;
+              copy[attr] = (typeof this[i] == "object")?obj[attr].clone():obj[attr];
+             }
+             return copy;
+            };
+            ------
+            a = {k1:1, k2:2, k3:3};
+            b = a.clone();
+
+        </pre>
+    </div>
+    <!--对象克隆结束-->
+    <!-- .before() 测试块 -->
+    <div style="border:1px solid red;padding:15px;">
+    <h3>before()事件测试块:<br>NOTE: 起先我认为before()和append()类似，只能添加元素（即页面本来没有的元素，动态生成新元素），只是位置不同，通过这次测试，我发现了before()可以移动已存在的元素到指定位置。这点值得注意。</h3>
+    <button onclick="beforeText()" > 之前插入</button>
+    <div class="insert" style="width:500px;height:32px;border:1px solid red;">插入内容</div>
+    <div style="width:500px;height:32px;border:1px solid blue;">哎嘿嘿</div>
+    <div id="test" style="color:red;">这还是一个测试</div>
+    </div>
+    <!--.before() 测试块结束 -->
+    <img id="fly" src="http://www.barzwines.com/wp-content/themes/BarZ/assets/images/home/plane.gif" class="plane" alt="">
+    <!--关于 tab按钮 切换元素焦点的问题-->
+    <div class="border-red">
+        <h2>tab按钮切换元素焦点<label style="margin-left:20px;font-size:12px;">时间：2016/11/21</label></h2>
+        <p>
+            浏览器自带tab键切换的功能，可切换的元素类型有 &lt;input&gt;、&lt;a&gt;、&lt;button&gt; 标记对(我只实验了这3种，不知道还有问其他类型，但是div、p等元素应该是不支持的), 这里值得注意的&lt;a&gt;标记对必须添加href属性，哪怕这个属性是空（曾经在这个问题是踩过坑）。
+        </p>
+        <p class="red">note:tab切换还可以定义顺序，通过 tabindex 这个属性,添加了这个属性之后，似乎都可以带上切换功能</p>
+        <p>现在可以按住tab键实验</p>
+        <div>
+            <a href="">21</a>
+            <button>button</button>
+            <a href="/content/webex/global/en_US/index/products/web-conferencing.html">2</a>
+            <a href="">3</a>
+            <a tabindex="1" >ssssssss4</a>
+            <a >5</a>
+            <a href="" >6</a>
+            <a href="">7</a>
+            <a href="" style="opacity: 0;">8</a>
+            <a href="">9</a>
+            <input value="input" />
+            <a >没有href属性</a>
+            <a href="">43</a>
+            <span tabindex="2">span</span>
+        </div>
+    </div>
+    <!--JS 不使用临时变量进行变量值互换-->
+    <div class="border-red">
+        <h2>JS 不使用临时变量进行变量值互换</h2>
+        <p>var foo = 1, bar = 2;</p>
+        <p>bar = [foo,foo=bar][0];</p>
+        <p>console.log(foo);<br>console.log(bar);</p>
+    </div>
+    <!--JS利用prototype实现继承-->
+    <div class="border-blue">
+        <h2>JS利用prototype实现继承 </h2>
+        <pre>
+            function Person(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            Person.prototype.sayHello=function(){
+                alert("使用原型得到Name："+this.name);
+            }
+            //这里使用了 new 关键字，是创建一个object，具体可以搜索new调用函数和直接调用函数的区别
+            //我测试了一下，不使用 new 是报错的 -_-!!,这方面有待学习
+            var per=new Person("tonghao",21);
+            per.sayHello(); //输出：使用原型得到Name:tonghao
+        </pre>
+    </div>
+    <!--jquery 使用自定义的仿extend方法添加对象方法的拓展-->
+    <div class="border-red">
+        <h2>jquery 使用自定义的仿extend方法添加对象方法的拓展</h2>
+            <pre class="brush:js">
+            var MyMath = {
+                //加法
+                Add: function(a, b){
+                return a + b;
+                },
+                //减法
+                Sub: function(a, b){
+                return a - b;
+                }
+            };
+
+            //自定义一个extend对象方法
+            MyMath.extend=function(){
+                var target = arguments[0] || {}, i = 1, length = arguments.length, deep = false, options;
+                if (typeof target === "boolean") {
+                    deep = target;
+                    target = arguments[1] || {};
+                    i = 2;
+                }
+                if (typeof target !== "object" && !jQuery.isFunction(target)) target = {};
+
+                // extend jQuery itself if only one argument is passed
+                if (length == i) {
+                    target = this;
+                    --i;
+                }
+                for (; i < length; i++){
+                    // Only deal with non-null/undefined values
+                    if ((options = arguments[i]) != null){
+                        // Extend the base object
+                        for (var name in options) {
+                            var src = target[name], copy = options[name];
+                            // Prevent never-ending loop
+                            if (target === copy)
+                                continue;
+                            // Recurse if we're merging object values
+                            if (deep && copy && typeof copy === "object" && !copy.nodeType){
+                                target[name] = jQuery.extend(deep, src || (copy.length != null ? [] : {}), copy);
+                            }
+                            // Don't bring in undefined values
+                            else{
+                                if (copy !== undefined){
+                                    target[name] = copy;
+                                }
+                            }
+                        }
+                    }
+                }
+                // Return the modified object
+                return target;
+            }
+            //使用自定义拓展方法
+            MyMath.extend({
+                expand1:function(){
+                },
+                expand2:function(){
+                },
+            });
+
+        </pre>
+    </div>
+    <!--JS 对于用display:inline-block 元素下沉的一些建议-->
+    <div class="border-red">
+        <h2>JS 对于用display:inline-block 元素下沉的一些建议</h2>
+        <pre>
+            有时候当我们对某些使用了inline-block的元素，奇怪的事情可能会发生：有的元素块下沉了。
+            查看资料之后，我整理出以下几点：
+            1.行内元素有一个基线，所有在这一行中的元素都以这条基线为准对齐。基线指的是一排字横排时下沿的基础线。
+            2.文本在容器中默认是上对齐的，你可以设置容器的text-align为right或者left、center，但是不能设置文字靠容器底部对齐
+                （非要这样也是有办法，例如包一个"p"或者"div"之类的设置与父容器的相对位置等），
+                就是说，文字是老大，它不迁就别人，只有容器靠下来迁就它。所以这个造成了这样参差不齐的显示。
+            3.补充一点，三个块中，一二个块，当容器放不下文字的时候，文字会自动换行，但是最后一个不会，它会突破容器。
+                这是因为最后一个没有空格，它会以为这是一个单词，采取不截断的措施，汉字和单词，它会给它换行。
+                如果就想要一堆字母换行，可以在块中设置word-break，属性有break-all,keep-all等，这个暂且不说。
+            4.拯救强迫症的救世主来了，他就是——<span style="color:red;">vertical-align</span>，默认是baseline,设置这个值，top,bottom,middle随便一个，就可以对齐了。
+        </pre>
+    </div>
+    <!--JS 相对路径相关-->
+    <div class="border-blue">
+        <h2>JS 相对路径</h2>
+        <pre>
+            1、 /开头表示根目录；
+            2、 ./表示当前目录；（斜画线前面一个点）
+            3、 ../上级目录；（斜画线前面两个点）
+            4、 直接用文件名不带/也表示同一目录
+        </pre>
+    </div>
+    <div class="border-red">
+        <h2>css 媒体查询</h2>
+        <pre>
+            @media 这方面知识需要加强，比较有用
+        </pre>
+        <pre>
+            1、要使用flex属性，其父元素的属性必须设置为 display:flex;
+            2、img 的 object-** 属性多看
+        </pre>
+    </div>
+    <div class="border-blue">
+        <h2>js getBoundingClientRect的用法 </h2>
+        <pre>
+            getBoundingClientRect用于获取某个元素相对于视窗的位置集合。集合中有top, right, bottom, left等属性。
+
+            1.语法：这个方法没有参数。
+
+                rectObject = object.getBoundingClientRect();
+            2.返回值类型：TextRectangle对象，每个矩形具有四个整数性质（ 上， 右 ， 下，和左 ）表示的坐标的矩形，以像素为单位。
+
+　               rectObject.top：元素上边到视窗上边的距离;
+
+　               rectObject.right：元素右边到视窗左边的距离;
+
+　               rectObject.bottom：元素下边到视窗上边的距离;
+
+　               rectObject.left：元素左边到视窗左边的距离;
+        </pre>
+    </div>
+
+    <div class="border-red">
+        <h2>window.parent ,window.top,window.self主要区别</h2>
+        <pre>
+            在应用有frameset或者iframe的页面时，parent是父窗口，top是最顶级父窗口（有的窗口中套了好几层frameset或者iframe）
+            self是当前窗口， opener是用open方法打开当前窗口的那个窗口。
+
+            window.self
+            功能：是对当前窗口自身的引用。它和window属性是等价的。
+            语法：window.self
+            注：window、self、window.self是等价的。
+
+            window.top
+            功能：返回顶层窗口，即浏览器窗口。
+            语法：window.top
+            注：如果窗口本身就是顶层窗口，top属性返回的是对自身的引用。
+
+            window.parent
+            功能：返回父窗口。
+            语法：window.parent
+            注：如果窗口本身是顶层窗口，parent属性返回的是对自身的引用。
+            在框架网页中，一般父窗口就是顶层窗口，但如果框架中还有框架，父窗口和顶层窗口就不一定相同了。
+
+            判断当前窗口是否在一个框架中：
+            var b = window.top!=window.self;
+            document.write( "当前窗口是否在一个框架中："+b );
+        </pre>
+    </div>
+    <div class="border-blue">
+        <h2>正则表达式简单只是</h2>
+        <pre>
+            1、在js中定义正则表达式很简单，有两种方式，一种是通过构造函数，一种是通过//，也就是两个斜杠。
+                1、var   re =new RegExp("**");
+                2、var   re =/**/;
+            2、使用正则表达式的主要有字符串的方法match，正则表达式的方法exec，test
+                var text="index.aspx?test=1&ww=2&www=3";
+                var re =/\?(\w{1,}=\w{1,}&){1,}\w{1,}=\w{1,}/;
+                //test测试给定的字符串是否满足正则表达式，返回值是bool类型的，只有真和假
+                var result=  re.test(text);
+                //exec测试给定的字符串是否满足正则表达式，返回匹配到的字符串，如果没有匹配的则返回null
+                var result=  re.exec(text);
+                //match其实是字符串的方法，但参数确是一个正则表达式
+                var result= text.match(re);
+        </pre>
+    </div>
+    <div class="border-red">
+        <h2>JS原型链</h2>
+        <pre>
+            1、JavaScript对象是一个属性的集合，另外有一个隐式的对象：原型对象。原型的值可以是一个对象或者null
+            2、由于原型对象本身也是对象，根据上边的定义，它也有自己的原型，而它自己的原型对象又可以有自己的原型，这样就组成了一条链，这个链就是原型链。（一直到返回null）
+            3、JavaScript还支持构造器（constructor ）形式的对象创建（这里可以理解为函数的一种）。构造器会自动的为新创建的对象设置原型对象，此时的原型对象通过构造器的prototype属性来引用。
+            4、这里加上自己的理解：似乎对象的原型对象是_proto_，而构造器的原型对象是由prototype属性来引用。
+
+
+        </pre>
+    </div>
+    <div class="border-blue">
+        <h2>CSS form 并行排列时水平对齐的问题。（很久没有学习记录了，哈哈）</h2>
+        <pre>
+            预备1，
+            2，
+            3，
+            开始...
+            当遇到两个输入框平行在同一行排列，可能会遇到不能在同一水平线的问题，这时候，不要急着用flaot。
+            考虑一下display:inline-block 这个萌萌的属性吧，最好结合着 vertical-align 这个属性来写。
+            话说，vertical-align 这个属性和 line-height 又有说不清楚道不明的关系，贵圈很乱啊 -_-!!
+            今天就遇到这个问题，网上很多方法都是很坑爹。。。。
+            既然看到这里了，就往上翻翻，有个 display-inline-block 的详细说明。
+            结束。
+        </pre>
+    </div>
+    <div class="border-red">
+        <h2>JS 匿名函数</h2>
+        <pre>
+            var aa = (function(){
+                var bb = function(){
+                    XXXXXX
+                };
+                return {cc:bb}
+            }());
+            ---------------以上代码相当于以下代码----------------
+            var dd = function(){
+                var bb = function(){
+                    XXXXXX
+                };
+                return {cc:bb}
+            };
+            var  aa = dd();
+        </pre>
+    </div>
+    <div class="border-blue">
+        <h2>JS a标记对中href和click事件的执行顺序</h2>
+        <pre>
+            onclick的事件被先执行，其次是href中定义的（页面跳转或者javascript）
+            同时存在两个定义的时候（onclick与href都定义了），如果想阻止href的动作，在onclick必须加上return false;
+            一般是这样写onclick="xxx();return false;".
+            在href中定义的函数如果有返回值的话，当前页面的内容将被返回值代替
+            如果页面过长有滚动条，且希望通过链接的 onclick 事件执行操作。
+            应将它的 href 属性设为 javascript:void(0);，而不要是 #，这可以防止不必要的页面跳动。
+        </pre>
+    </div>
+    <!--php 说明-->
+    <div class="border-red">
+        <h2>PHP复习</h2>
+        <p>json_decode($string,true):string to array</p>
+        <p>json_decode($string):string to object</p>
+        <p>json_encode($arr):array to string</p>
+        <p>见下面的例子</p>
+        <pre>
+            $str = "{'a':1,'b':2,'c':3}";
+            $arr = json_decode($str,true);
+            $obj = json_decode($str);
+            $json = json_encode($arr);
+            var_dump($arr);
+            var_dump($obj);
+            var_dump($json);
+
+            注意:foreach 语法结构提供了遍历数组的简单方式。foreach 仅能够应用于<span style="text-decoration:underline;color:red;">数组</span>和<span style="text-decoration:underline;color:red;">对象</span>，如果尝试应用于其他数据类型的变量，或者未初始化的变量将发出错误信息。
+
+            foreach ($obj as $key=>$value) {
+                var_dump($key.'=>'.$value);
+            }
+
+            结果：
+            array(3) {
+                ["a"]=>
+                int(1)
+                ["b"]=>
+                int(2)
+                ["c"]=>
+                int(3)
+            }
+
+            object(stdClass)#1 (3) {
+                ["a"]=>
+                int(1)
+                ["b"]=>
+                int(2)
+                ["c"]=>
+                int(3)
+            }
+
+            string(19) "{"a":1,"b":2,"c":3}"
+
+            ____________________
+
+            遍历结果：
+
+            string(4) "a=>1"
+
+            string(4) "b=>2"
+
+            string(4) "c=>3"
+        </pre>
+        <div>
+            <h3>拓展：</h3>
+            <p>#composer是什么 <br>
+                Composer 是 PHP 的一个依赖管理工具。它允许你申明项目所依赖的代码库，它会在你的项目中为你安装他们。 <br>
+                composer出现之前我们php项目依赖管理大部分都是手动管理，（当然也可能会用到pear，pear是全局安装的）。 <br>
+            </p>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="jquery-3.min.js"></script>
+    <script type="text/javascript" src="pubfile/bootstrap.js"></script>
+    <script type="text/javascript">
+        //用于监听input的值变化（input的值产生变化才会触发事件）
+
+        $(function(){
+            /*
+            * 利用对animation的监听事件，来改变运动中的状态。这里是让飞机调了个头
+            * 貌似只有JS的监听方法，Jquery不支持，当然强行$(ele)[0]也行
+            * animationstart - CSS 动画开始后触发
+            * animationiteration - CSS 动画重复播放时触发
+            * animationend - CSS 动画完成后触发
+            * */
+            var fly_count = 0;
+
+            document.getElementById("fly").addEventListener('animationiteration',function(){
+                fly_count++;
+                if((fly_count%2) == 0){
+                    $("#fly").css('transform','rotateY(0deg)');
+                }else{
+                    $("#fly").css('transform','rotateY(180deg)');
+                }
+            },false);
+            /*
+            *逻辑运算的妙用
+            * */
+            var fuc={
+            show:function(show,title){
+              $("#show").append("("+title+")  => "+show+"<br><br>");
+            },
+            };
+            var aa =aa || 4;
+            fuc.show(aa,'aa || 4');
+            var b = 3 || 0;
+            fuc.show(b,'3 || 0');
+            var c= 0 || 3;
+            fuc.show(c,'0 || 3');
+            var d= null || 3;
+            fuc.show(d,'null || 3');
+            var e= false || 3;
+            fuc.show(e,'false || 3');
+            var f= false && 3;
+            fuc.show(f,'false && 3');
+            var g= 3 && false && 1;
+            fuc.show(g,'3 && false && 1');
+            var h = 1 && 2;
+            fuc.show(h,'1 && 2');
+            var s = 1 && 0 || 0 && 4 || 5 && 6;
+            fuc.show(s,'1 && 0 || 0 && 4 || 5 && 6');
+
+            var j=16;
+            var i = (j>15 && 3) || (j>10 && 2) || (j > 5 && 1) || 0;
+            fuc.show(i,'i');
+
+            var k ={"15":'3','10':'2','5':'1'}[j] || 0;
+            fuc.show(k,'k');
+            /*
+            * 拖拽
+            * */
+            $('#dragArea').mousedown(function (event) {
+              var isMove = true;
+              var abs_x = event.pageX - $('#dragArea').position().left;
+              var abs_y = event.pageY - $('#dragArea').position().top;
+              $(this).mousemove(function (event) {
+                if (isMove) {
+                    //var obj = $('#dragArea');
+                    $(this).css({'left':event.pageX - abs_x, 'top':event.pageY - abs_y});
+                }
+              }).mouseup(
+                function () {
+                  isMove = false;
+              });
+            });
+            /*
+               jquery 事件委托,delegate()该方法已经被on()代替
+               $("#weituo").delegate('p','click',function(){
+                 alert($(this).html());
+               });
+            */
+
+            $("#weituo").on('click','p',function(event){
+            //if(event.target.nodeName == 'P')
+            //{
+              alert($(this).html());
+            //}
+            });
+            var ele= 4 ;
+            $("#add-weituo").on('click',function(){
+            ele++;
+            $("#weituo").append('<p>'+ele*11+'</p>');
+            });
+
+
+            /*
+             * javascript严格模式：'use strict';
+             *  测试 let关键字
+             * */
+            var a = [];
+            for (let i = 0; i < 10; i++) {
+                a[i] = function () {
+                    console.log(i);
+                };
+            }
+            a[6]();
+            //闭包：闭包就是能够读取其他函数内部变量的函数（正确性有待确认）
+            function f1(){
+                var n=999;
+                function f2(){
+                    console.log(n);
+                }
+                return f2;
+            }
+            var result=f1();
+            result(); // 999
+
+
+            var name = "The Window";
+            var object = {
+                name : "My Object",
+                getNameFunc : function(){
+                    console.log("this1:"+this.name);
+                    function f1(){
+                        console.log("this:"+this.name);
+                    }
+                    return f1;
+                }
+            };
+            object.getNameFunc()();
+
+            var name = "The Window";
+            var object = {
+                name : "My Object",
+                getNameFunc : function(){
+                    var that = this;
+                    f2:function f2(){
+                        console.log(that.name+",that");
+                    }
+                    return f2;
+                }
+            };
+            object.getNameFunc()();
+
+            var a = {
+                ee:function(){
+                    console.log(33);
+                },
+            };
+            a.ee();
+
+            // 自动移动的小红块
+            // NOTE: 这里要特别注意的是offset的偏移量，他包括了所有的偏移，包括margin、padding、scroll,所以每次获取的是都要减去当前固定的偏移
+            var moveRect = setInterval("autoMove()",10);
+            //右键点击功能
+            $("#dragArea").bind("contextmenu",function(e){
+                if($(this).hasClass('catching')){
+                    moveRect = setInterval("autoMove()",10);
+                    $(this).removeClass("catching");
+                }else{
+                    clearInterval(moveRect);
+                    $(this).addClass('catching');
+                }
+                // NOTE: 屏蔽系统右键菜单
+                return false;
+            });
+
+            /*
+             js对象、类、原型：
+             原型对象实际上就是构造函数的一个实例对象，和普通的实例对象没有本质上的区别
+             1、对象方法包括构造函数中的方法以及构造函数原型上面的方法；
+             2、类方法，其实这里的类就是一个函数，在js中由于函数也是一个对象，所以可以为函数添加属性以及方法，这种方法在node中用的比较多；
+             3、原型方法一般用于对象实例共享，比如Person.prototype.sayName=function(){console.log(this.name);};在原型上面添加该方法，就能实现共享。这样就不用每一次初始化一个实例的时候，为其分配相应的内存了。
+             */
+
+            function People(name)
+            {
+                this.name=name;
+                //对象方法
+                this.Introduce=function(){
+                    console.log("My name is "+this.name);
+                }
+            }
+            //类方法
+            People.Run=function(){
+                console.log("I can run");
+            }
+            /*
+             * 原型方法:其实构造函数的一个实例对象,和本例中的Introduce方法一样
+             * 这里说一下我自己的理解：
+             * 内存中只有一份，相当于静态 static
+             * 只是在实例化的时候不用像Introduce方法一样给每个实例都分配内存
+             * */
+            People.prototype = {
+                addr : '湖北武汉',
+                IntroduceChinese : function(){
+                    console.log("我的名字是"+this.name);
+                }
+            };
+            var p1 = new People("tong");
+            var p2 = new People("hao");
+            p1.IntroduceChinese();
+            p1.Introduce();
+            People.Run();
+            /*p1.Run(); //error*/
+
+        });
+
+        // 对于before和after的理解
+        // NOTE: 起先我认为before()和append()类似，只能添加元素（即页面本来没有的元素，动态生成新元素），只是位置不同，
+        //通过这次测试，我发现了before()可以移动已存在的元素到指定位置。这点值得注意。mark.
+        function beforeText(){
+            $(".insert").before($("#test"));
+        }
+
+
+
+        /*
+        * 自动移动
+        * */
+        var startI = 1;
+        var widthType,heightType;
+        function autoMove(){
+
+            var screenW = parseInt($(window).width());
+            var screenH = parseInt($(window).height());
+            var maxLeft = screenW-$('#dragArea').width();
+            var maxTop = screenH-$('#dragArea').height();
+            var currentL = $('#dragArea').offset().left-$(window).scrollLeft();//相对于文档的位置，要减去滚动条滚动导致的增加的偏移量
+            var currentT = $('#dragArea').offset().top-$(window).scrollTop();
+            //var currentL = $('#dragArea').position().left; //相对于父元素的位置
+            //var currentT = $('#dragArea').position().top;
+            if(currentL <= 0 ){
+                widthType = false;
+            }else if(currentL >= maxLeft ){
+                widthType = true;
+            }
+            if(currentT <= 0 ){
+                heightType = false;
+            }else if(currentT >= maxTop ){
+                heightType = true;
+            }
+            if(widthType){
+                var newL = currentL-startI;
+            }else{
+                var newL = currentL+startI;
+            }
+            if(heightType){
+                var newT = currentT-startI;
+            }else {
+                var newT = currentT+startI;
+            }
+            $('#dragArea').css({"left":newL,"top":newT});
+        }
+
+
+
+
+    </script>
+</body>
+</html>

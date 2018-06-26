@@ -23,7 +23,8 @@
     + flex:1 ===>   flex-grow |  flex-shrink | flex-basis = 1 1 auto;
 - H5语义化标签、H5新标签（canvas，video）、web可访问性(web Accessibility)
 - ajax(Asynchronous JavaScript and XML)原理(xmlHttpRequest)
-- 前端跨域</h2>
+- 前端跨域(同源策略) (服务器反向代理；与正向代理的区别？)
+    + script标签 / JsonP / iframe / websocket/ 服务器反向代理/ CORS
 - web lazyload 懒加载，web优化
 - 模块化开发 AMD（requireJs,前置依赖，加载方便）/ CMD (seaJs，就近依赖，开发方便)
 - ES6 / webpack/ bable / postCss

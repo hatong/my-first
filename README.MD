@@ -15,6 +15,7 @@ git merge [branch]
 <h1> git push </h1>
 
 ------------------------------------------------------------
+<<<<<<< HEAD
 # 近期总结：
 - js 原型链以及继承:
     + _proto_, new , object.create
@@ -31,3 +32,21 @@ git merge [branch]
 - vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex，
 - 开发模式：MVC / MVVM
 - 前端脚手架知识， vue-cli
+=======
+ - 近期总结：
+   + js 原型链以及继承:
+   + + _proto_, new , object.create
+    <h2>function绑定几种方式，添加注册事件</h2>
+    <h2>flex布局 ：</h2>
+        <p>flex-direction/ flex-wrap/ flex-flow/ justify-content/ align-items/ align-content</p>
+        <p>flex:1 ===>   flex-grow |  flex-shrink | flex-basis = 1 1 auto;</p>
+    <h2>H5语义化标签、H5新标签（canvas，video）、web可访问性(web Accessibility)</h2>
+    <h2>ajax(Asynchronous JavaScript and XML)原理(xmlHttpRequest)</h2>
+    <h2>前端跨域</h2>
+    <h2>web lazyload 懒加载，web优化</h2>
+    <h2>模块化开发 AMD（requireJs,前置依赖，加载方便）/ CMD (seaJs，就近依赖，开发方便)</h2>
+    <h2>ES6 / webpack/ bable / postCss</h2>
+    <h2>vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex，</h2>
+    <h2>开发模式：MVC / MVVM </h2>
+    <h2>前端脚手架知识， vue-cli  </h2>
+>>>>>>> refs/remotes/origin/master

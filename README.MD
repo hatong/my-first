@@ -6,9 +6,9 @@ git checkout [branch-name]
 # 合并指定分支到当前分支
 git merge [branch]
 # 显示有变更的文件
-git status
-
-# git clone [url] 
+# git status
+# git merge
+# git clone [url]
 # git pull
 # git add . 
 # git commit -m [message] 

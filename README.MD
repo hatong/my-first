@@ -30,3 +30,7 @@
 - vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex，
 - 开发模式：MVC / MVVM
 - 前端脚手架知识， vue-cli
+- 从输入url到浏览器渲染过程：
+    + 查询host，查询DNS，与服务器四次握手三次挥手，加载数据，渲染树，DOM树
+- cookie 和 session
+- post 和 get 区别

@@ -86,5 +86,6 @@ if (!isProduction) {
     publicPath: '/',
     compress: true,
     historyApiFallback: true,
+    port: 8080,
   };
 }

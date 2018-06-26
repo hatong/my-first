@@ -8,11 +8,11 @@
 - 显示有变更的文件
     + git status
 
-    + git pull
-    + git clone [url]
-    + git add .
-    + git commit -m [message]
-    + git push
+- git pull
+- git clone [url]
+- git add .
+- git commit -m [message]
+- git push
 ------------------------------------------------------------
 # 近期总结：
 - js 原型链以及继承:

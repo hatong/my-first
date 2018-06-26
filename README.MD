@@ -1,7 +1,7 @@
 # it is my first github
 # 列出所有本地分支
 git branch
-#切换分支
+# 切换分支
 git checkout [branch-name]
 # 合并指定分支到当前分支
 git merge [branch]

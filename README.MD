@@ -1,19 +1,18 @@
 # it is my first github
 - 列出所有本地分支
-+ git branch
+    + git branch
 - 切换分支
-+ git checkout [branch-name]
+    + git checkout [branch-name]
 - 合并指定分支到当前分支
-+ git merge [branch]
+    + git merge [branch]
 - 显示有变更的文件
-+ git status
+    + git status
 
-+ git pull
-+ git clone [url]
-+ git add .
-+ git commit -m [message]
-+ git push </h1>
-
+    + git pull
+    + git clone [url]
+    + git add .
+    + git commit -m [message]
+    + git push
 ------------------------------------------------------------
 # 近期总结：
 - js 原型链以及继承:

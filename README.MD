@@ -8,7 +8,8 @@ git merge [branch]
 # 显示有变更的文件
 git status
 
-git clone [url] <br>
-git add . <br>
-git commit -m [message] <br>
-git push
+# git clone [url] 
+# git pull
+# git add . 
+# git commit -m [message] 
+# git push

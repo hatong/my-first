@@ -1,4 +1,6 @@
 # it is my first github
 
-fix by homePC
-second fix by 童     
+git status
+git add .
+git commit 
+git push

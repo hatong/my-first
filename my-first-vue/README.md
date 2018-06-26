@@ -3,7 +3,7 @@
     <img src="./src/images/logo-3.png" width="360px">
 </p>
 
-<h1 align="center">Easy Vue</h1>
+<h1 align="center">my first vue project</h1>
 
 <p align="center">
 <a href="http://vue.tigerb.cn/#/"><img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Build Status"></a>
@@ -76,6 +76,3 @@ step 2:
 
 ```
 
-## APPRECIATION
-
-<img src="https://raw.githubusercontent.com/TIGERB/easy-tips/master/money-qrcode.jpg" width="300px">

@@ -17,7 +17,7 @@ git merge [branch]
 ------------------------------------------------------------
  - 近期总结：
    + js 原型链以及继承:
-   + _proto_, new , object.create
+   ++ _proto_, new , object.create
     <h2>function绑定几种方式，添加注册事件</h2>
     <h2>flex布局 ：</h2>
         <p>flex-direction/ flex-wrap/ flex-flow/ justify-content/ align-items/ align-content</p>

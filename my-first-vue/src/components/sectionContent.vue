@@ -1,12 +1,12 @@
 <template>
-    <div class=" grey_background" style="padding:30px 0 50px;">
+    <div :class=" {grey_background:secContent.bgColor}" style="padding:30px 0 50px;">
         <div class="container" style="padding:30px 0 0;">
             <h3 style="margin-bottom: 30px;" class="dark">{{ secContent.title }}</h3>
             <div class="row">
                 <div class="col-xs-4" v-for="listContent in secContent.listContent">
                     <img class="img-responsive" :src="listContent.imgUrl">
-                    <h4 class="dark mT10">{{ listContent.subtitle }}</h4>
-                    <p class="darkgrey">{{ listContent.desc }}</p>
+                    <!--<h4 class="dark mT10">{{ listContent.subtitle }}</h4>-->
+                    <!--<p class="darkgrey">{{ listContent.desc }}</p>-->
                 </div>
             </div>
         </div>
@@ -48,6 +48,8 @@
     }
     .img-responsive {
         width: 100%;
+        height: 204px;
+        margin: 10px 0px;
     }
     .dark {
         color: #383838;

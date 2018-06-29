@@ -4,15 +4,16 @@
             <div class="logo"><a><img src="images/logo.png"></a></div>
             <div class="nav">
                 <ul style="padding-left:0">
-                    <li class="active"><router-link to="/detail">首页</router-link></li>
+                    <li class="active"><router-link to="#">热销产品</router-link></li>
+                    <!--<li class="active"><router-link to="/detail">热销产品</router-link></li>
                     <li><a>我的商城</a></li>
                     <li class="platform" :class="{letrit:platDropDown}" @mouseover="platOver" @mouseout="platOut"><a>平台合作</a><i></i>
                         <div class="classify" v-show="showDownMenu"><span><a >城市合伙人</a></span><span><a >供应商合作</a></span><span><a>司机报名</a></span></div>
-                    </li>
+                    </li>-->
                     <li><a>公司简介</a></li>
-                    <li><a>新闻资讯</a></li>
-                    <li ><a target="_blank">最美公益</a></li>
-                    <li><a>招聘</a></li>
+                    <li><a>商品展示</a></li>
+                    <li ><a target="_blank">合作平台</a></li>
+                    <li><a>合作联系</a></li>
                 </ul>
             </div>
         </div>

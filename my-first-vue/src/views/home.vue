@@ -2,12 +2,14 @@
   <div class="home">
     <main-header></main-header>
     <carousel></carousel>
-    <introduce></introduce>
-    <sectionContent :secContent="firstContent"></sectionContent>
-    <sectionSlide></sectionSlide>
-    <sectionReport :reportData="reportContent"></sectionReport>
-    <otherSection></otherSection>
-    <sectionReport :reportData="reportContentTwo"></sectionReport>
+    <!--<introduce></introduce>-->
+    <sectionContent :secContent="vegetableContent"></sectionContent>
+    <sectionContent :secContent="seafoodContent"></sectionContent>
+    <sectionContent :secContent="meatContent"></sectionContent>
+    <!--<sectionSlide></sectionSlide>-->
+    <!--<sectionReport :reportData="reportContentTwo"></sectionReport>-->
+    <!--<sectionReport :reportData="reportContent"></sectionReport>-->
+    <!--<otherSection></otherSection>-->
     <footerContent></footerContent>
   </div>
 </template>
@@ -19,34 +21,138 @@ import barBottom from '../components/barBottom.vue';
 import alert from '../components/alert.vue';*/
 import mainHeader from '../components/header.vue';
 import carousel from '../components/carousel.vue';
-import introduce from '../components/sectionIntroduce.vue';
+//import introduce from '../components/sectionIntroduce.vue';
 import sectionContent from '../components/sectionContent.vue';
-import sectionSlide from '../components/sectionSlide.vue';
-import sectionReport from '../components/sectionReport.vue';
-import otherSection from '../components/otherSection.vue';
+//import sectionSlide from '../components/sectionSlide.vue';
+//import sectionReport from '../components/sectionReport.vue';
+//import otherSection from '../components/otherSection.vue';
 import footerContent from '../components/footer.vue';
 
 export default {
   data(){
     return {
-      firstContent: {
-        title:"美菜扶贫菜帮扶计划：助力千亿农产品上行",
+      vegetableContent: {
+        title:"新鲜蔬菜",
+        bgColor:true,
         listContent:[
           {
-            imgUrl:require("../images/assist1.png"),
-            subtitle:"爱心助销亳州万亩土豆",
-            desc:"亳州近万亩土豆滞销，因土豆卖不上价，老农不舍得雇工收土豆，自己在田间用手刨。5月份，美菜网已帮助消化亳州滞销土豆近100万斤。但这对于亳州近万亩滞销土豆而言，仍旧杯水车薪。",
+            imgUrl:require("../images/1.jpg"),
+            subtitle:"",
+            desc:"",
           },
           {
-            imgUrl:require("../images/assist2.png"),
-            subtitle:"爱心助销四川老震区红皮萝卜",
-            desc:"四川北川羌族自治县开坪乡全益村近700吨红皮萝卜滞销，价格低至5毛钱也无人问津。老百姓需要背上120斤重的背篓将萝卜运上车，一天来回得走上10公里山路。美菜网发动媒体并联动成都分公司采购，半天时间40万斤萝卜已基本被下单订购。",
+            imgUrl:require("../images/2.png"),
+            subtitle:"",
+            desc:"",
           },
           {
-            imgUrl:require("../images/assist3.png"),
-            subtitle:"爱心助销山东百吨红皮圆葱",
-            desc:"山东省昌乐县鄌郚镇中辛庄村，提前储放在大棚里的滞销圆葱眼看就要过储存期了，没有人来收的话就要烂在棚里了。美菜网与多家遭遇滞销的农户签订意向采购圆葱200万斤，产地分布在安丘、昌乐、嘉祥等地。",
+            imgUrl:require("../images/3.png"),
+            subtitle:"",
+            desc:"",
           },
+          {
+            imgUrl:require("../images/4.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/5.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/6.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/7.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/8.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/9.png"),
+            subtitle:"",
+            desc:"",
+          },
+          /*{
+            imgUrl:require("../images/10.png"),
+            subtitle:"",
+            desc:"",
+          },*/
+        ],
+
+      },
+      seafoodContent: {
+        title:"生猛海鲜",
+        bgColor:false,
+        listContent:[
+          {
+            imgUrl:require("../images/11.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/12.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/13.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/14.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/15.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/16.png"),
+            subtitle:"",
+            desc:"",
+          },{
+            imgUrl:require("../images/17.png"),
+            subtitle:"",
+            desc:"",
+          },{
+            imgUrl:require("../images/18.png"),
+            subtitle:"",
+            desc:"",
+          },
+        ],
+
+      },
+      meatContent: {
+        title:"美味肉类",
+        bgColor:true,
+        listContent:[
+          {
+            imgUrl:require("../images/19.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/20.png"),
+            subtitle:"",
+            desc:"",
+          },
+          {
+            imgUrl:require("../images/21.png"),
+            subtitle:"",
+            desc:"",
+          },
+
         ],
 
       },
@@ -106,11 +212,11 @@ export default {
     'bar-bottom': barBottom,*/
     'main-header': mainHeader,
     'carousel': carousel,
-    'introduce': introduce,
+//    'introduce': introduce,
     'sectionContent': sectionContent,
-    'sectionSlide': sectionSlide,
-    'sectionReport': sectionReport,
-    'otherSection': otherSection,
+//    'sectionSlide': sectionSlide,
+//    'sectionReport': sectionReport,
+//    'otherSection': otherSection,
     'footerContent': footerContent,
   },
   methods:{

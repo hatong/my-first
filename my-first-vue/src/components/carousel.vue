@@ -1,25 +1,27 @@
 <template>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-pause='true' data-interval="4000" >
+    <!--<div id="carousel-example-generic" class="carousel slide"  data-pause='true' data-interval="4000" >-->
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0"  class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <!--<li data-target="#carousel-example-generic" data-slide-to="3"></li>-->
         </ol>
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox" style="">
-            <div class="item active" >
-                <img src="images/banner1.jpg" alt="最美菜公益-2">
-            </div>
-            <div class="item">
-                <img src="images/banner2.jpg" alt="最美菜公益-3">
-            </div>
-            <div class="item">
+            <!-- <div class="item">
                 <img src="images/banner.jpg" alt="最美菜公益-1">
+            </div>-->
+
+            <div class="item active" >
+                <img src="images/banner1.png" alt="蔬菜">
             </div>
             <div class="item">
-                <img src="images/banner3.jpg" alt="最美菜公益-4">
+                <img src="images/banner2.png" alt="肉类">
+            </div>
+            <div class="item">
+                <img src="images/banner3.png" alt="水产">
             </div>
         </div>
     </div>
@@ -30,6 +32,15 @@
 </script>
 
 <style>
+    .carousel-inner .item {
+        height:520px;
+        overflow: hidden;
+    }
+
+    #carousel-example-generic .carousel-inner>.item>img {
+        margin: 0 auto;
+        height: 100%;
+    }
     .carousel {
         position: relative;
     }

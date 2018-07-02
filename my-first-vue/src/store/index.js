@@ -11,6 +11,7 @@ const state = {
   isloadingComplete: false,
   busy: false,
   isShow: false,
+  testData:'',
 };
 
 const getters = {};
@@ -31,6 +32,9 @@ const mutations = {
   isShowAlert(state, data) {
     state.isShow = data;
   },
+  updateTestData(state,data){
+    state.testData=data;
+  }
 };
 
 const actions = {
@@ -57,7 +61,10 @@ const actions = {
       context.commit('updateBusyState', false);
       progress.$Progress.fail();
     });
-}
+  },
+  testVuxFunction(context){
+    context.commit('updateTestData','test by hatong');
+  },
 
 };
 

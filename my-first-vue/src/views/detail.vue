@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import barTop from '../components/barTop.vue';
+import barTop from '../components/carousel.vue';
 import text from '../components/text.vue';
 
 export default {

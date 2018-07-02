@@ -1,10 +1,10 @@
 <template>
     <header>
         <div id="header">
-            <div class="logo"><a><img src="images/logo.png"></a></div>
+            <div class="logo"><img src="images/logo_1.png"></div>
             <div class="nav">
                 <ul style="padding-left:0">
-                    <li class="active"><router-link to="#">热销产品</router-link></li>
+                    <li :class="{active:currentPage.homePageActivate}"><router-link to="/">热销产品</router-link></li>
                     <!--<li class="active"><router-link to="/detail">热销产品</router-link></li>
                     <li><a>我的商城</a></li>
                     <li class="platform" :class="{letrit:platDropDown}" @mouseover="platOver" @mouseout="platOut"><a>平台合作</a><i></i>
@@ -12,7 +12,7 @@
                     </li>-->
                     <li><a>公司简介</a></li>
                     <li><a>商品展示</a></li>
-                    <li ><a target="_blank">合作平台</a></li>
+                    <li :class="{active:currentPage.contactUsActivate}"><router-link to="contact-us">合作平台</router-link></li>
                     <li><a>合作联系</a></li>
                 </ul>
             </div>
@@ -25,12 +25,14 @@
 
     export default {
         data: () => ({
-            // isShow: false
             platDropDown:false,
             showDownMenu:false,
         }),
         mounted: function () {
             this.$nextTick(function () { });
+        },
+        props:{
+            currentPage:Object
         },
         methods: {
             hideAlert: function () {
@@ -57,7 +59,7 @@
     /*@media (min-width:991px){*/
         #header {
             background: #fff;
-            height: 60px;
+            height: 90px;
             position: fixed;
             width: 100%;
             min-width: 1200px;
@@ -70,6 +72,7 @@
         }
         #header .logo img {
             width: 80px;
+            margin-top: -7px;
         }
         .nav {
             padding-left: 0;
@@ -84,7 +87,7 @@
             display: inline-block;
             padding: 0 20px;
             font-size: 16px;
-            line-height: 60px;
+            line-height: 90px;
         }
         #header .nav ul .active > a {
             color: #62B134;

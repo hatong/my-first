@@ -1,31 +1,19 @@
 <template>
   <div class="home">
-    <main-header></main-header>
+    <main-header :currentPage="currentPage"></main-header>
     <carousel></carousel>
-    <!--<introduce></introduce>-->
     <sectionContent :secContent="vegetableContent"></sectionContent>
     <sectionContent :secContent="seafoodContent"></sectionContent>
     <sectionContent :secContent="meatContent"></sectionContent>
-    <!--<sectionSlide></sectionSlide>-->
-    <!--<sectionReport :reportData="reportContentTwo"></sectionReport>-->
-    <!--<sectionReport :reportData="reportContent"></sectionReport>-->
-    <!--<otherSection></otherSection>-->
     <footerContent></footerContent>
   </div>
 </template>
 
 <script>
-/*import barTop fro m '../components/barTop.vue';
-import card from '../components/card.vue';
-import barBottom from '../components/barBottom.vue';
-import alert from '../components/alert.vue';*/
+
 import mainHeader from '../components/header.vue';
 import carousel from '../components/carousel.vue';
-//import introduce from '../components/sectionIntroduce.vue';
 import sectionContent from '../components/sectionContent.vue';
-//import sectionSlide from '../components/sectionSlide.vue';
-//import sectionReport from '../components/sectionReport.vue';
-//import otherSection from '../components/otherSection.vue';
 import footerContent from '../components/footer.vue';
 
 export default {
@@ -203,20 +191,15 @@ export default {
         ],
         bgColor:false,
       },
+      currentPage:{
+        homePageActivate:true, //当前页面是首页
+      }
     }
   },
   components: {
-    /*'bar-top': barTop,
-    'card': card,
-    'alert': alert,
-    'bar-bottom': barBottom,*/
     'main-header': mainHeader,
     'carousel': carousel,
-//    'introduce': introduce,
     'sectionContent': sectionContent,
-//    'sectionSlide': sectionSlide,
-//    'sectionReport': sectionReport,
-//    'otherSection': otherSection,
     'footerContent': footerContent,
   },
   methods:{

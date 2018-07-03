@@ -47,7 +47,7 @@
                 var poi = new BMap.Point(this.longitude,this.latitude);
                 map.centerAndZoom(poi, 16);
                 map.enableScrollWheelZoom();
-                var content = '<div class="bMap-title">'+'<strong>地址：</strong>昊轩配送<br/><strong>贵宾垂询电话：</strong>暂定<br/><strong>网址：</strong>https://our site.</div>';
+                var content = '<div class="bMap-title">'+'<strong>地址：</strong>昊轩配送<br/><strong>咨询热线：</strong>暂定<br/><strong>网址：</strong>https://our site.</div>';
                 //创建检索信息窗口对象
                 var searchInfoWindow = null;
                 searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
@@ -65,7 +65,7 @@
                 });
 
                 var marker = new BMap.Marker(poi); //创建marker对象
-                marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+//                marker.setAnimation(BMAP_ANIMATION_BOUNCE);       //小红点跳动
                 searchInfoWindow.open(marker);
                 marker.addEventListener("click", function(e){
                     searchInfoWindow.open(marker);

@@ -67,6 +67,7 @@
     #new-footer .footer {
         margin-top: 30px;
         padding-left: 35px;
+        text-align: center;
     }
     #new-footer .footer p {
         float: left;
@@ -85,5 +86,6 @@
     #new-footer .footer p a {
         color: #bbb;
         text-decoration: none;
+
     }
 </style>

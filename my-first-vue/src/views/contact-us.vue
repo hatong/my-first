@@ -6,6 +6,7 @@
         <public-footer></public-footer>
     </section>
 </template>
+
 <script>
     import publicHeader from '../components/header.vue';
     import contactBody from '../components/contactUs.vue';

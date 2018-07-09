@@ -28,7 +28,11 @@
 - web lazyload 懒加载，web优化
 - 模块化开发 AMD（requireJs,前置依赖，加载方便）/ CMD (seaJs，就近依赖，开发方便)
 - ES6 / webpack/ bable / postCss
-- vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex，
+- vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex（vuex核心是store），
+- vue 首次加载慢的优化方案：懒加载，分离框架库
+- vue 关于懒加载和异步加载：通过require这个关键字,自行百度懒加载
+<br>{path:'/first',component:first},
+- vue 对于直接根据索引修改数组某个元素，不能实现双向绑定的问题：可以使用 Vue.set/vm.$set 等方法触发更新（详情可见官网）。当然，数组本身自带的API，vue是可以监听的，如：push(),pop(),shift(),unshift(),splice(),sort(),reverse()等
 - 开发模式：MVC / MVVM
 - 前端脚手架知识， vue-cli
 - 从输入url到浏览器渲染过程：
@@ -36,4 +40,5 @@
 - cookie 和 session
 - post 和 get 区别
 - js设计模式：单例模式，工厂模式，观察者模式，组合模式
+- js关于数组的操作API值得留意：split，splice，slice 等等
 - 事件队列，事件循环，宏任务，微任务

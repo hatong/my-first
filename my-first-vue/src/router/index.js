@@ -6,6 +6,7 @@ import ContactUs from '../views/contact-us.vue';
 
 Vue.use(VueRouter);
 
+// const Home = r => require.ensure([], () => r(require('../views/home.vue')), 'chunkname1');  //vue的异步加载（解决复杂项目首页加载过慢）
 const routes = [
   {
     path: '/',

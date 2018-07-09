@@ -12,13 +12,13 @@
                             </div>
                             <div class="col-md-6">
                                 <span class="rsABlock txtCent s2 " >
-                                    <img src="images/icon1.png"> 电话：XXXXXXXXXXXX
+                                    <img src="images/icon1.png"> 电话：15339699974
                                 </span>
                                 <span class="rsABlock txtCent s3" >
-                                    <img src="images/icon2.png"> 邮箱： XXXXXXXXXXXXXXX
+                                    <img src="images/icon2.png"> 邮箱： xiaorui8210@163.com
                                 </span>
                                 <span class="rsABlock txtCent s4" >
-                                    <img src="images/icon3.png"> 地址：XXXXXXXXXXX
+                                    <img src="images/icon3.png"> 地址：安徽省合肥市瑶海区大兴镇周谷堆批发市场
                                 </span>
                             </div>
 
@@ -57,7 +57,9 @@
         padding-top: 91px;
         width: 100%;
         height: 535px;
-        background: url(../images/bg5.png) center 91px no-repeat;
+        /*background: url(../images/bg5.png) center 91px no-repeat;*/
+        background: url(../images/bg5.jpg) center 91px no-repeat;
+        /*background-color: #000;*/
     }
     .rsOverflow {
         width: 100%;

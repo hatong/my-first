@@ -39,6 +39,7 @@
     + 查询host，查询DNS，与服务器四次握手三次挥手，加载数据，渲染树，DOM树
 - cookie 和 session
 - post 和 get 区别
-- js设计模式：单例模式，工厂模式，观察者模式，组合模式
+- js设计模式：单例模式，工厂模式，观察者模式，组合模式. vue使用的是观察者-订阅者模式（Observer->Dep->Watcher）
 - js关于数组的操作API值得留意：split，splice，slice 等等
+- tips:http请求方式除了post 和 get，还有HEAD,PUT,DELETE,OPTIONS,TRACE,CONNECT
 - 事件队列，事件循环，宏任务，微任务

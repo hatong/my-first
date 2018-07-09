@@ -3,10 +3,12 @@ import VueRouter from 'vue-router';
 
 import Home from '../views/home.vue';
 import ContactUs from '../views/contact-us.vue';
+import Cooperation from '../views/cooperation.vue';
 
 Vue.use(VueRouter);
 
-// const Home = r => require.ensure([], () => r(require('../views/home.vue')), 'chunkname1');  //vue的异步加载（解决复杂项目首页加载过慢）
+// const Home = r => require.ensure([], () => r(require('../views/home.vue')), 'chunkname');  //vue的异步加载（解决复杂项目首页加载过慢）
+//  const Home1 = resolve => require(['../views/home.vue'],resolve);  //vue的lazyload（解决复杂项目首页加载过慢）
 const routes = [
   {
     path: '/',
@@ -19,10 +21,18 @@ const routes = [
   {
     path: '/contact-us',
     component: ContactUs,
-    name:'contactUs',
+    name: 'contactUs',
+    meta: {
+      title: '联系我们',
+    },
+  },
+  {
+    path: '/cooperation',
+    component: Cooperation,
+    name:'Cooperation Platform',
     meta:{
-      title:'联系我们',
-    }
+      title:'合作平台',
+    },
   },
   /*{ path: '/lists', component: Lists },
   { path: '/option', component: Option },

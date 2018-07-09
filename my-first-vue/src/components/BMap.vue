@@ -26,12 +26,12 @@
             // 经度
             longitude:{
                 type:Number,
-                default:117.146102
+                default:117.389117
             },
             // 纬度
             latitude:{
                 type:Number,
-                default:31.837539
+                default:31.842901
             },
             description:{
                 type:String,
@@ -47,7 +47,7 @@
                 var poi = new BMap.Point(this.longitude,this.latitude);
                 map.centerAndZoom(poi, 16);
                 map.enableScrollWheelZoom();
-                var content = '<div class="bMap-title">'+'<strong>地址：</strong>昊轩配送<br/><strong>咨询热线：</strong>暂定<br/><strong>网址：</strong>https://our site.</div>';
+                var content = '<div class="bMap-title">'+'<strong>地址：</strong>安徽省合肥市瑶海区大兴镇周谷堆批发市场<br/><strong>咨询热线：</strong>15339699974<br/><strong>网址：</strong>www.hxpeisong.com</div>';
                 //创建检索信息窗口对象
                 var searchInfoWindow = null;
                 searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {

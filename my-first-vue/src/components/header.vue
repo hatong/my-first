@@ -12,8 +12,8 @@
                     </li>-->
                     <li><a>公司简介</a></li>
                     <li><a>商品展示</a></li>
-                    <li :class="{active:currentPage.contactUsActivate}"><router-link to="contact-us">合作平台</router-link></li>
-                    <li><a>合作联系</a></li>
+                    <li :class="{active:currentPage.cooperationActivate}"><router-link to="cooperation">合作平台</router-link></li>
+                    <li :class="{active:currentPage.contactUsActivate}"><router-link to="contact-us">合作联系</router-link></li>
                 </ul>
             </div>
         </div>

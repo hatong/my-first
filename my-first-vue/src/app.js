@@ -14,6 +14,7 @@ import InfiniteScroll from 'vue-infinite-scroll'; // get vue-infinite-scroll
 import App from './app.vue'; // get root module
 import router from './router';
 import store from './store'; // get vuex -> store
+import VueLazyload from 'vue-lazyload'
 
 FastClick.attach(document.body); // init fastclick
 const options = {
@@ -30,6 +31,14 @@ const options = {
 };
 Vue.use(VueProgressBar, options);
 Vue.use(InfiniteScroll);
+Vue.use(VueLazyload);
+
+/*Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: 'images/1.jpg',
+  loading: 'images/1.jpg',
+  attempt: 1
+});*/
 
 // init
 const app = new Vue({

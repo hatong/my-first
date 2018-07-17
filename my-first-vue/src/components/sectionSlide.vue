@@ -64,7 +64,7 @@
             }).catch(function (error) {
                 alert('axios error');
                 console.log(error)
-            });
+            }).bind(this);       //如果直接在里面访问 this，无法访问到 Vue 实例，这时只要添加一个 .bind(this) 就能解决这个问题
         },
 
         methods:{

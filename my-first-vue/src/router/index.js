@@ -4,6 +4,8 @@ import VueRouter from 'vue-router';
 import Home from '../views/home.vue';
 import ContactUs from '../views/contact-us.vue';
 import Cooperation from '../views/cooperation.vue';
+import Intro from '../views/intro.vue';
+import Product from '../views/product.vue';
 
 Vue.use(VueRouter);
 
@@ -19,13 +21,22 @@ const routes = [
     }
   },
   {
-    path: '/contact-us',
-    component: ContactUs,
-    name: 'contactUs',
-    meta: {
-      title: '联系我们',
-    },
+    path: '/intro',
+    component:Intro,
+    name:'introduce',
+    meta:{
+      title:'公司简介'
+    }
   },
+  {
+    path: '/product',
+    component:Product,
+    name:'商品展示',
+    meta:{
+      title:'商品展示'
+    }
+  },
+
   {
     path: '/cooperation',
     component: Cooperation,
@@ -34,6 +45,17 @@ const routes = [
       title:'合作平台',
     },
   },
+
+  {
+    path: '/contact-us',
+    component: ContactUs,
+    name: 'contactUs',
+    meta: {
+      title: '联系我们',
+    },
+  },
+
+
   /*{ path: '/lists', component: Lists },
   { path: '/option', component: Option },
   { path: '/detail', component: Detail },*/

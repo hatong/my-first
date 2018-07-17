@@ -29,47 +29,47 @@ export default {
             desc:"",
           },
           {
-            imgUrl:require("../images/2.png"),
+            imgUrl:require("../images/2.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/3.png"),
+            imgUrl:require("../images/3.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/4.png"),
+            imgUrl:require("../images/4.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/5.png"),
+            imgUrl:require("../images/5.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/6.png"),
+            imgUrl:require("../images/6.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/7.png"),
+            imgUrl:require("../images/7.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/8.png"),
+            imgUrl:require("../images/8.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/9.png"),
+            imgUrl:require("../images/9.jpg"),
             subtitle:"",
             desc:"",
           },
           /*{
-            imgUrl:require("../images/10.png"),
+            imgUrl:require("../images/10.jpg"),
             subtitle:"",
             desc:"",
           },*/
@@ -81,40 +81,40 @@ export default {
         bgColor:false,
         listContent:[
           {
-            imgUrl:require("../images/11.png"),
+            imgUrl:require("../images/11.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/12.png"),
+            imgUrl:require("../images/12.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/13.png"),
+            imgUrl:require("../images/13.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/14.png"),
+            imgUrl:require("../images/14.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/15.png"),
+            imgUrl:require("../images/15.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/16.png"),
+            imgUrl:require("../images/16.jpg"),
             subtitle:"",
             desc:"",
           },{
-            imgUrl:require("../images/17.png"),
+            imgUrl:require("../images/17.jpg"),
             subtitle:"",
             desc:"",
           },{
-            imgUrl:require("../images/18.png"),
+            imgUrl:require("../images/18.jpg"),
             subtitle:"",
             desc:"",
           },
@@ -126,70 +126,23 @@ export default {
         bgColor:true,
         listContent:[
           {
-            imgUrl:require("../images/19.png"),
+            imgUrl:require("../images/19.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/20.png"),
+            imgUrl:require("../images/20.jpg"),
             subtitle:"",
             desc:"",
           },
           {
-            imgUrl:require("../images/21.png"),
+            imgUrl:require("../images/21.jpg"),
             subtitle:"",
             desc:"",
           },
 
         ],
 
-      },
-      reportContent: {
-        title:"相关视频及媒体报道",
-        listContent:[
-          {
-            imgUrl:require("../images/deadstock.png"),
-            subtitle:"一根黄瓜的旅程：告诉你菜价是如何贵起来的",
-            desc:"来源：腾讯视频",
-          },
-          {
-            imgUrl:require("../images/online.png"),
-            subtitle:"滞销菜帮扶计划——美菜在行动",
-            desc:"来源：腾讯视频",
-          },
-          {
-            imgUrl:require("../images/assist.png"),
-            subtitle:"最美菜公益基金滞销菜帮扶计划启动",
-            desc:"来源：新华网",
-          },
-          {
-            imgUrl:require("../images/poverty.png"),
-            subtitle:"美菜助销贫困县优质农产品 “草原红参”销往京津",
-            desc:"来源：搜狐网",
-          },
-        ],
-        bgColor:true,
-      },
-      reportContentTwo: {
-        title:"相关报道",
-        listContent:[
-          {
-            imgUrl:require("../images/convention.png"),
-            subtitle:"世界互联网大会美菜网刘传军谈精准扶贫",
-            desc:"来源：光明网",
-          },
-          {
-            imgUrl:require("../images/packagetwostage.png"),
-            subtitle:"最美菜公益基金第二期最美包裹赠予赴京小候鸟",
-            desc:"来源：搜狐网",
-          },
-          {
-            imgUrl:require("../images/classroomtwostage.png"),
-            subtitle:"最美菜公益基金第二所“最美教室”建成",
-            desc:"来源：新华网",
-          },
-        ],
-        bgColor:false,
       },
       currentPage:{
         homePageActivate:true, //当前页面是首页

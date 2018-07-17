@@ -5,13 +5,8 @@
             <div class="nav">
                 <ul style="padding-left:0">
                     <li :class="{active:currentPage.homePageActivate}"><router-link to="/">热销产品</router-link></li>
-                    <!--<li class="active"><router-link to="/detail">热销产品</router-link></li>
-                    <li><a>我的商城</a></li>
-                    <li class="platform" :class="{letrit:platDropDown}" @mouseover="platOver" @mouseout="platOut"><a>平台合作</a><i></i>
-                        <div class="classify" v-show="showDownMenu"><span><a >城市合伙人</a></span><span><a >供应商合作</a></span><span><a>司机报名</a></span></div>
-                    </li>-->
-                    <li><a>公司简介</a></li>
-                    <li><a>商品展示</a></li>
+                    <li :class="{active:currentPage.introActivate}"><router-link to="intro">公司简介</router-link></li>
+                    <li :class="{active:currentPage.proActivate}"><router-link to="product">商品展示</router-link></li>
                     <li :class="{active:currentPage.cooperationActivate}"><router-link to="cooperation">合作平台</router-link></li>
                     <li :class="{active:currentPage.contactUsActivate}"><router-link to="contact-us">合作联系</router-link></li>
                 </ul>

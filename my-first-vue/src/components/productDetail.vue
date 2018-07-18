@@ -4,8 +4,8 @@
         <div class="container">
             <div class="row">
                 <ul>
-                    <h1 class="detail-title">养生蔬果</h1>
-                    <li class="col-md-4 prod-item" v-for="lazyImage in lazyImages.VegeImages" >
+                    <h1 class="detail-title">{{lazyImages.vegeDesc}}</h1>
+                    <li class="col-md-4 col-sm-4 col-xs-4 prod-item" v-for="lazyImage in lazyImages.VegeImages" >
                         <div class="img-container">
                             <img v-lazy="lazyImage.imageUrl"/>
                             <p class="desc">{{lazyImages.vegeDesc}}</p>
@@ -13,8 +13,8 @@
                     </li>
                 </ul>
                 <ul>
-                    <h1 class="detail-title">美味肉食</h1>
-                    <li class="col-md-4 prod-item" v-for="lazyImage in lazyImages.meatImages" >
+                    <h1 class="detail-title">{{lazyImages.meatDesc}}</h1>
+                    <li class="col-md-4 col-sm-4 col-xs-4 prod-item" v-for="lazyImage in lazyImages.meatImages" >
                         <div class="img-container">
                             <img v-lazy="lazyImage.imageUrl"/>
                             <p class="desc">{{lazyImages.meatDesc}}</p>
@@ -22,11 +22,11 @@
                     </li>
                 </ul>
                 <ul>
-                    <h1 class="detail-title">营养肉食</h1>
-                    <li class="col-md-4 prod-item" v-for="lazyImage in lazyImages.seafoodImages" >
+                    <h1 class="detail-title">{{lazyImages.seafoodDesc}}</h1>
+                    <li class="col-md-4 col-sm-4 col-xs-4 prod-item" v-for="lazyImage in lazyImages.seafoodImages" >
                         <div class="img-container">
                             <img v-lazy="lazyImage.imageUrl"/>
-                            <p class="desc">{{lazyImages.sfDesc}}</p>
+                            <p class="desc">{{lazyImages.seafoodDesc}}</p>
                         </div>
                     </li>
                 </ul>
@@ -68,14 +68,16 @@
                 ],
                 vegeDesc:'养生蔬果',
                 meatDesc:'美味肉食',
-                sfDesc:'营养海鲜',
-
+                seafoodDesc:'水产海鲜',
             }
         }),
 
     };
 </script>
 <style>
+    .container {
+        width: 1170px !important;
+    }
     .product-container{
         padding-top: 89px;
     }

@@ -18,10 +18,10 @@
                 <img src="images/banner1.jpg" alt="蔬菜">
             </div>
             <div class="item">
-                <img src="images/banner2.png" alt="肉类">
+                <img src="images/banner2.jpg" alt="肉类">
             </div>
             <div class="item">
-                <img src="images/banner3.png" alt="水产">
+                <img src="images/banner3.jpg" alt="水产">
             </div>
         </div>
     </div>

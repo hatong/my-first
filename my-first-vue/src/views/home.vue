@@ -77,7 +77,7 @@ export default {
 
       },
       seafoodContent: {
-        title:"生猛海鲜",
+        title:"水产海鲜",
         bgColor:false,
         listContent:[
           {

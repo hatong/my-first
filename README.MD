@@ -31,7 +31,7 @@
 - ES6 / webpack/ bable / postCss
 - vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex（vuex核心是store），
 - vue
-    +首次加载慢的优化方案：懒加载，分离框架库
+    + 首次加载慢的优化方案：懒加载，分离框架库
 - vue
     + 关于懒加载和异步加载：通过require这个关键字,自行百度懒加载<br>const Home1 = resolve => require(['../views/home.vue'],resolve);,
 - vue
@@ -52,9 +52,9 @@
 - 事件队列，事件循环，宏任务，微任务
 - 编程思想：声明式编程 / 命令式编程
 - React
-    +生命周期: componentWillMount(),componentDidMount(),componentWillReceiveProps(nextProps),shouldComponentUpdate(nextProps, nextState),componentWillUpdate(nextProps, nextState),componentDidUpdate(),componentWillUnmount()
-    +创建组件引发的思考：Mixins支持情况，详情可以搜索关键字 react component
-    +react 触发 render 的时机： 1:首次加载;2:setState改变组件内部state;3:接受到新的props.
-    +component中的render() ：生成一个组件的虚拟dom节点。  一个组件类必须要实现一个 render 方法，这个 render 方法必须要返回一个 JSX 元素。但这里要注意的是，必须要用一个外层的 JSX 元素把所有内容包裹起来。返回并列多个 JSX 元素是不合法的著作权归作者所有。
-    +ReactDOM.render: 将模板转为HTML语言，并插入指定的DOM节点，即生成真实DOM，并将之挂载到指定位置。 注意要和组件中的render()区分开
-    +super(porps) 这个super代表父类的构造函数，调用了父类的方法。在定义component的时候，如果定义了构造函数（constructor），则必须在构造函数里加上super()
+    + 生命周期: componentWillMount(),componentDidMount(),componentWillReceiveProps(nextProps),shouldComponentUpdate(nextProps, nextState),componentWillUpdate(nextProps, nextState),componentDidUpdate(),componentWillUnmount()
+    + 创建组件引发的思考：Mixins支持情况，详情可以搜索关键字 react component
+    + react 触发 render 的时机： 1:首次加载;2:setState改变组件内部state;3:接受到新的props.
+    + component中的render() ：生成一个组件的虚拟dom节点。  一个组件类必须要实现一个 render 方法，这个 render 方法必须要返回一个 JSX 元素。但这里要注意的是，必须要用一个外层的 JSX 元素把所有内容包裹起来。返回并列多个 JSX 元素是不合法的著作权归作者所有。
+    + ReactDOM.render: 将模板转为HTML语言，并插入指定的DOM节点，即生成真实DOM，并将之挂载到指定位置。 注意要和组件中的render()区分开
+    + super(porps) 这个super代表父类的构造函数，调用了父类的方法。在定义component的时候，如果定义了构造函数（constructor），则必须在构造函数里加上super()

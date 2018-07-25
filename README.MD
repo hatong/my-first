@@ -17,6 +17,7 @@
 # 近期总结：
 - js 原型链以及继承:
     + _proto_, new , object.create
+    + 钩子函数的机制与实现需要了解一下
 - function绑定几种方式，添加注册事件
 -flex布局 ：
     + flex-direction/ flex-wrap/ flex-flow/ justify-content/ align-items/ align-content
@@ -29,10 +30,15 @@
 - 模块化开发 AMD（requireJs,前置依赖，加载方便）/ CMD (seaJs，就近依赖，开发方便)
 - ES6 / webpack/ bable / postCss
 - vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex（vuex核心是store），
-- vue 首次加载慢的优化方案：懒加载，分离框架库
-- vue 关于懒加载和异步加载：通过require这个关键字,自行百度懒加载
-<br>const Home1 = resolve => require(['../views/home.vue'],resolve);,
-- vue 对于直接根据索引修改数组某个元素，不能实现双向绑定的问题：可以使用 Vue.set/vm.$set 等方法触发更新（详情可见官网）。当然，数组本身自带的API，vue是可以监听的，如：push(),pop(),shift(),unshift(),splice(),sort(),reverse()等
+- vue
+    +首次加载慢的优化方案：懒加载，分离框架库
+- vue
+    + 关于懒加载和异步加载：通过require这个关键字,自行百度懒加载<br>const Home1 = resolve => require(['../views/home.vue'],resolve);,
+- vue
+    +对于直接根据索引修改数组某个元素，不能实现双向绑定的问题：可以使用 Vue.set/vm.$set 等方法触发更新（详情可见官网）。当然，数组本身自带的API，vue是可以监听的，如：push(),pop(),shift(),unshift(),splice(),sort(),reverse()等
+- vue
+    + $refs/ref需要注意;
+    + 另外:<input v-model="test1">,这个test1 必须是已经在vue data中已定义的; v-model 其实是一个简写
 - 开发模式：MVC / MVVM
 - 前端脚手架知识， vue-cli
 - 从输入url到浏览器渲染过程：
@@ -44,3 +50,11 @@
 - js 数组相关：不改变原数组，返回新的数组：通过concat和 slice(0)方法，返回一个副本数组，这样修改副本数组的时候，不会修改原数组。<br>tip:传统的直接将数组赋值给一个变量，只是将数组的引用（我认为是指针）赋值给变量，改变被赋值的变量时，原数组的值跟着被修改，这是受限于js对象原理。类似上面说的vue直接修改数组或者对象的值是不能触发双向绑定的。
 - tips:http请求方式除了post 和 get，还有HEAD,PUT,DELETE,OPTIONS,TRACE,CONNECT
 - 事件队列，事件循环，宏任务，微任务
+- 编程思想：声明式编程 / 命令式编程
+- React
+    +生命周期: componentWillMount(),componentDidMount(),componentWillReceiveProps(nextProps),shouldComponentUpdate(nextProps, nextState),componentWillUpdate(nextProps, nextState),componentDidUpdate(),componentWillUnmount()
+    +创建组件引发的思考：Mixins支持情况，详情可以搜索关键字 react component
+    +react 触发 render 的时机： 1:首次加载;2:setState改变组件内部state;3:接受到新的props.
+    +component中的render() ：生成一个组件的虚拟dom节点。  一个组件类必须要实现一个 render 方法，这个 render 方法必须要返回一个 JSX 元素。但这里要注意的是，必须要用一个外层的 JSX 元素把所有内容包裹起来。返回并列多个 JSX 元素是不合法的著作权归作者所有。
+    +ReactDOM.render: 将模板转为HTML语言，并插入指定的DOM节点，即生成真实DOM，并将之挂载到指定位置。 注意要和组件中的render()区分开
+    +super(porps) 这个super代表父类的构造函数，调用了父类的方法。在定义component的时候，如果定义了构造函数（constructor），则必须在构造函数里加上super()

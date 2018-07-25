@@ -11,6 +11,16 @@
                     <li :class="{active:currentPage.contactUsActivate}"><router-link to="contact-us">合作联系</router-link></li>
                 </ul>
             </div>
+            <div :class="{hidden:prodEnv}">
+                <!--
+                <input :value="message" @input="message = $event.target.value"  >
+                注意：v-model 其实是上面这行的简写
+                -->
+                <input v-model="message"  >
+                <p>{{message}}</p>
+                <button @click="modValue">modify</button>
+            </div>
+
         </div>
     </header>
 </template>
@@ -22,14 +32,23 @@
         data: () => ({
             platDropDown:false,
             showDownMenu:false,
+            message:'ww',
+            prodEnv:true,
         }),
         mounted: function () {
             this.$nextTick(function () { });
+            /*在mounted生命周期执行向父组件传递参数*/
+            if(!this.prodEnv){
+                this.$emit('getDataFromChild','from header component','data2');
+            }
         },
         props:{
             currentPage:Object
         },
         methods: {
+            modValue:function () {
+                this.message='ewew';
+            },
             hideAlert: function () {
                 this.$store.commit('isShowAlert', false);
             },
@@ -37,6 +56,7 @@
                 /*show the drop menu in header when the mouse over the menu*/
                 this.platDropDown= true;
                 this.showDownMenu= true;
+
             },
             platOut: function(){
                 /*hidden the drop menu in header when the mouse over the menu*/

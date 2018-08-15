@@ -45,7 +45,6 @@
             if(!this.prodEnv){
                 this.$emit('getDataFromChild','from header component','data2');
             }
-//            this.bbb=this.author;
 //            this.$store.commit('updateAuthorData','handsome boy');
 
 //            alert(this.$store.state.author);

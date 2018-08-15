@@ -10,6 +10,7 @@
     import introduceContent from '../components/introContent.vue';
     import mainFooter from '../components/footer.vue';
     export default{
+
         data:() => ({
             currentPage:{
                 introActivate:true,

@@ -15,6 +15,7 @@ import mainHeader from '../components/header.vue';
 import carousel from '../components/carousel.vue';
 import sectionContent from '../components/sectionContent.vue';
 import footerContent from '../components/footer.vue';
+//import store from '../store/index.js';
 
 export default {
   data(){
@@ -146,8 +147,14 @@ export default {
       },
       currentPage:{
         homePageActivate:true, //当前页面是首页
-      }
+      },
+
     }
+  },
+  mounted:function () {
+    /*这里修改了store的属性，在其他的component中使用了该属性的值也跟着改变了，由此可见store中的值是公用的
+    this.$store.commit('updateAuthorData','handsome boy');*/
+
   },
   components: {
     'main-header': mainHeader,

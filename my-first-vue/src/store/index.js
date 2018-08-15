@@ -12,6 +12,7 @@ const state = {
   busy: false,
   isShow: false,
   testData:'',
+  author:'hatong',
 };
 
 const getters = {};
@@ -34,6 +35,9 @@ const mutations = {
   },
   updateTestData(state,data){
     state.testData=data;
+  },
+  updateAuthorData(state,data){
+    state.author=data;
   }
 };
 

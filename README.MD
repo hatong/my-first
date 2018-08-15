@@ -17,6 +17,7 @@
 # 近期总结：
 - js 原型链以及继承:
     + _proto_, new , object.create
+    + 对象的_proto_指向创建它的函数对象的原型对象
     + 钩子函数的机制与实现需要了解一下
 - function绑定几种方式，添加注册事件
 -flex布局 ：
@@ -44,11 +45,10 @@
 - 从输入url到浏览器渲染过程：
     + 查询host，查询DNS，与服务器四次握手三次挥手，加载数据，渲染树，DOM树
 - cookie 和 session
-- post 和 get 区别
-- js设计模式：单例模式，工厂模式，观察者模式，组合模式. vue使用的是观察者-订阅者模式（Observer->Dep->Watcher）
+- post 和 get 区别；http请求方式除了post 和 get，还有HEAD,PUT,DELETE,OPTIONS,TRACE,CONNECT
+- js设计模式：单例模式，工厂模式，观察者模式，组合模式.  vue使用的是观察者模式（通常又被称作为发布-订阅者模式）（Observer->Dep->Watcher）
 - js关于数组的操作API值得留意：split(数组转字符串，注意这与join相反，join是array to string)，splice（删除或添加数组元素），slice（截取数组），push(),pop(),shift(),unshift()，concat等等
 - js 数组相关：不改变原数组，返回新的数组：通过concat和 slice(0)方法，返回一个副本数组，这样修改副本数组的时候，不会修改原数组。<br>tip:传统的直接将数组赋值给一个变量，只是将数组的引用（我认为是指针）赋值给变量，改变被赋值的变量时，原数组的值跟着被修改，这是受限于js对象原理。类似上面说的vue直接修改数组或者对象的值是不能触发双向绑定的。
-- tips:http请求方式除了post 和 get，还有HEAD,PUT,DELETE,OPTIONS,TRACE,CONNECT
 - 事件队列，事件循环，宏任务，微任务
 - 编程思想：声明式编程 / 命令式编程
 - React
@@ -58,3 +58,14 @@
     + component中的render() ：生成一个组件的虚拟dom节点。  一个组件类必须要实现一个 render 方法，这个 render 方法必须要返回一个 JSX 元素。但这里要注意的是，必须要用一个外层的 JSX 元素把所有内容包裹起来。返回并列多个 JSX 元素是不合法的著作权归作者所有。
     + ReactDOM.render: 将模板转为HTML语言，并插入指定的DOM节点，即生成真实DOM，并将之挂载到指定位置。 注意要和组件中的render()区分开
     + super(porps) 这个super代表父类的构造函数，调用了父类的方法。在定义component的时候，如果定义了构造函数（constructor），则必须在构造函数里加上super()
+    + state是组件自己管理数据，控制自己的状态，可变; props是外部参数，props不可改变(只读); 没有state的叫做无状态组件，有state的叫做有状态组件
+    + 在React中，状态分享是通过将state数据提升至离需要这些数据的组件最近的父组件来完成的。这就是所谓的状态提升(在我的理解中，这是类似vue的父子组件以及兄弟组件之间的数据沟通)。
+ --------------------------------------------------------
+ 关于react 和 vue的比较，个人理解（有待更新）：
+    + vue学习成本确实比较低，易于上手。vue采用观察者模式，对每个组件进行监听，只改需要改的部分（去重后）
+    + vue写起来更优雅一点，比较舒服。
+    + Vue主要是由开发者进行维护的，
+    + react 监听到dom变化，就会把所有的子节点全部更新，这样似乎更耗性能一点。
+    + React由Facebook这类大公司维护
+    + react首先提出来虚拟dom的概念，并延伸出 react native，在各种终端有良好的兼容性。
+    + 其他方面，两者似乎差不多

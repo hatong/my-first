@@ -1,5 +1,6 @@
 <template>
     <header>
+
         <div id="header">
             <div class="logo"><img src="images/logo_1.png"></div>
             <div class="nav">
@@ -19,6 +20,8 @@
                 <input v-model="message"  >
                 <p>{{message}}</p>
                 <button @click="modValue">modify</button>
+                <input  v-model="author" />
+
             </div>
 
         </div>
@@ -34,6 +37,7 @@
             showDownMenu:false,
             message:'ww',
             prodEnv:true,
+//            author:''
         }),
         mounted: function () {
             this.$nextTick(function () { });
@@ -41,6 +45,10 @@
             if(!this.prodEnv){
                 this.$emit('getDataFromChild','from header component','data2');
             }
+//            this.bbb=this.author;
+//            this.$store.commit('updateAuthorData','handsome boy');
+
+//            alert(this.$store.state.author);
         },
         props:{
             currentPage:Object
@@ -65,7 +73,9 @@
             },
         },
         computed: mapState({
+            /*这里的mapState是相当于把store中的数据简写到变量中，当然这个变量不需要再vue.data中定义（否则会报重复的错误），直接可以在组件中使用*/
             isShow: state => state.isShow,
+            author: state => state.author
         }),
     }
 </script>

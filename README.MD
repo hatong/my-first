@@ -37,6 +37,9 @@
                 var b = require('./b') // 依赖可以就近书写  <br>
                 ...<br>
             })<br>
+- 模块化开发
+    + CommonJS：是Node.js使用的模块化标准
+    + ES6 ： export/import
 - ES6 / webpack/ bable / postCss
 - vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex（vuex核心是store），
 - vue
@@ -47,7 +50,7 @@
     +对于直接根据索引修改数组某个元素，不能实现双向绑定的问题：可以使用 Vue.set/vm.$set 等方法触发更新（详情可见官网）。当然，数组本身自带的API，vue是可以监听的，如：push(),pop(),shift(),unshift(),splice(),sort(),reverse()等
 - vue
     + $refs/ref需要注意;
-    + 另外:<input v-model="test1">,这个test1 必须是已经在vue data中已定义的; v-model 其实是一个简写
+    + 另外:\"<input v-model="test1">\",这个test1 必须是已经在vue data中已定义的; v-model 其实是一个简写
 - vue
     + 除了父子组件数据沟通，利用vuex来管理data之外，还有一种能够使兄弟组件数据沟通的方法 —— BUS总线（中央事件总线）
     + Bus.$on('setMsg', content => { this.msg = content;});

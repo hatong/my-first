@@ -7,7 +7,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var webpackConfig = module.exports = {}; // init object
 var isProduction = process.env.NODE_ENV === 'production'; // production environment
 
-
 // input
 webpackConfig.entry = {
   app: './src/app.js', // main
@@ -19,6 +18,8 @@ webpackConfig.output = {
    publicPath: './',
   filename: isProduction ? '[name].[hash].js' : '[name].js',
 };
+
+
 
 // loader
 webpackConfig.module = {
@@ -86,6 +87,11 @@ webpackConfig.plugins = [
 webpackConfig.externals={
   'BMap': 'BMap',            //引入百度地图
   'BMapSymbolSHAPEPOINT': 'BMap_Symbol_SHAPE_POINT'
+};
+webpackConfig.resolve={
+      alias: {
+          'vue': 'vue/dist/vue.js'
+      }
 };
 
 if (!isProduction) {

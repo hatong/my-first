@@ -231,12 +231,33 @@ class Calculator extends Component{
     }
 }
 
+
+function Item(props) {
+    //如果需要添加自定义属性，需要加上 "data-" 前缀
+    return <li data-key={props.message} >{props.message}</li>;
+}
+
+function TodoList() {
+    const todos = ['finish doc', 'submit pr', 'nag dan to review'];
+    return (
+        <ul>
+            /*遍历需要加上key属性，否则 console 会报错*/
+            {todos.map((message) => <Item key={message} message={message} />)}
+        </ul>
+    );
+}
+
+
+
+
 ReactDOM.render(
+    //<TodoList />,
     // <Clock/>,
     <Calculator />,
     document.getElementById('root')
 );
 
 //========================================
+
 
 

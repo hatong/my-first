@@ -16,7 +16,7 @@
 ------------------------------------------------------------
 # 近期总结：
 - js 原型链以及继承:
-    + _proto_, new , object.create
+    + _proto_, new , object.create()和 new object()区别
     + 对象的_proto_指向创建它的函数对象的原型对象
     + 钩子函数的机制与实现需要了解一下
 - function绑定几种方式，添加注册事件
@@ -40,6 +40,10 @@
 - vue
     + $refs/ref需要注意;
     + 另外:<input v-model="test1">,这个test1 必须是已经在vue data中已定义的; v-model 其实是一个简写
+- vue
+    + 除了父子组件数据沟通，利用vuex来管理data之外，还有一种能够使兄弟组件数据沟通的方法 —— BUS总线（中央事件总线）
+    + Bus.$on('setMsg', content => { this.msg = content;});
+    + Bus.$emit('setMsg', 'Hi Vue!');
 - 开发模式：MVC / MVVM
 - 前端脚手架知识， vue-cli
 - 从输入url到浏览器渲染过程：
@@ -65,7 +69,7 @@
     + vue学习成本确实比较低，易于上手。vue采用观察者模式，对每个组件进行监听，只改需要改的部分（去重后）
     + vue写起来更优雅一点，比较舒服。
     + Vue主要是由开发者进行维护的，
-    + react 监听到dom变化，就会把所有的子节点全部更新，这样似乎更耗性能一点。
+    + react 监听到dom变化，就会把所有的子节点全部更新;如果DOM一致，仅有属性改变，那保持DOM，仅更新属性。
     + React由Facebook这类大公司维护
     + react首先提出来虚拟dom的概念，并延伸出 react native，在各种终端有良好的兼容性。
     + 其他方面，两者似乎差不多

@@ -31,7 +31,7 @@
 - web lazyload 懒加载，web优化
 - 模块化开发 AMD（requireJs,前置依赖，加载方便）/ CMD (seaJs，就近依赖，开发方便)
     + AMD:	define(['./a', './b'], function(a, b) {...})
-    + CMD:  define(function(require, exports, module) {  <br>
+    + CMD:  define(function(require, exports, module) {
                 var a = require('./a')  <br>
                 ...                     <br>
                 var b = require('./b') // 依赖可以就近书写  <br>
@@ -50,7 +50,7 @@
     +对于直接根据索引修改数组某个元素，不能实现双向绑定的问题：可以使用 Vue.set/vm.$set 等方法触发更新（详情可见官网）。当然，数组本身自带的API，vue是可以监听的，如：push(),pop(),shift(),unshift(),splice(),sort(),reverse()等
 - vue
     + $refs/ref需要注意;
-    + 另外:\"<input v-model="test1">\",这个test1 必须是已经在vue data中已定义的; v-model 其实是一个简写
+    + 另外:`<input v-model="test1">`,这个test1 必须是已经在vue data中已定义的; v-model 其实是一个简写
 - vue
     + 除了父子组件数据沟通，利用vuex来管理data之外，还有一种能够使兄弟组件数据沟通的方法 —— BUS总线（中央事件总线）
     + Bus.$on('setMsg', content => { this.msg = content;});

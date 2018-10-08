@@ -15,8 +15,8 @@
 - git push
 ------------------------------------------------------------
 # 近期总结：
-- cookie and session
-- 浏览器加载网页的流程
+- cookie and session /  sessionStorage and localStorage
+- 浏览器加载网页的流程: https://blog.csdn.net/qq_22313585/article/details/78926141
 - js 原型链以及继承:
     + _proto_, new , object.create()和 new object()区别
     + 对象的_proto_指向创建它的函数对象的原型对象

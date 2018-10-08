@@ -20,6 +20,7 @@
     + 对象的_proto_指向创建它的函数对象的原型对象
     + 钩子函数的机制与实现需要了解一下
 - function绑定几种方式，添加注册事件
+- js 闭包
 -flex布局 ：
     + flex-direction/ flex-wrap/ flex-flow/ justify-content/ align-items/ align-content
     + flex:1 ===>   flex-grow |  flex-shrink | flex-basis = 1 1 auto;
@@ -29,6 +30,13 @@
     + script标签 / JsonP / iframe / websocket/ 服务器反向代理/ CORS
 - web lazyload 懒加载，web优化
 - 模块化开发 AMD（requireJs,前置依赖，加载方便）/ CMD (seaJs，就近依赖，开发方便)
+    + AMD:	define(['./a', './b'], function(a, b) {...})
+    + CMD:  define(function(require, exports, module) {
+                var a = require('./a')
+                ...
+                var b = require('./b') // 依赖可以就近书写
+                ...
+            })
 - ES6 / webpack/ bable / postCss
 - vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex（vuex核心是store），
 - vue
@@ -64,6 +72,7 @@
     + super(porps) 这个super代表父类的构造函数，调用了父类的方法。在定义component的时候，如果定义了构造函数（constructor），则必须在构造函数里加上super()
     + state是组件自己管理数据，控制自己的状态，可变; props是外部参数，props不可改变(只读); 没有state的叫做无状态组件，有state的叫做有状态组件
     + 在React中，状态分享是通过将state数据提升至离需要这些数据的组件最近的父组件来完成的。这就是所谓的状态提升(在我的理解中，这是类似vue的父子组件以及兄弟组件之间的数据沟通)。
+- NodeJS 中间件概念，作为服务器的基本知识
  --------------------------------------------------------
  - 关于react 和 vue的比较，个人理解（有待更新）：
     + vue学习成本确实比较低，易于上手。vue采用观察者模式，对每个组件进行监听，只改需要改的部分（去重后）

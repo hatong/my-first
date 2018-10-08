@@ -31,12 +31,13 @@
 - web lazyload 懒加载，web优化
 - 模块化开发 AMD（requireJs,前置依赖，加载方便）/ CMD (seaJs，就近依赖，开发方便)
     + AMD:	define(['./a', './b'], function(a, b) {...})
-    + CMD:  ###     define(function(require, exports, module) {
-                        var a = require('./a')
-                        ...
-                        var b = require('./b') // 依赖可以就近书写
-                        ...
-                    })
+    + CMD:
+        ### define(function(require, exports, module) {
+                var a = require('./a')
+                ...
+                var b = require('./b') // 依赖可以就近书写
+                ...
+            })
 - ES6 / webpack/ bable / postCss
 - vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex（vuex核心是store），
 - vue

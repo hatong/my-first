@@ -13,6 +13,13 @@
 - git add .
 - git commit -m [message]
 - git push
+# 第一次下载git后，将项目clone到本地的操作
+- 基础配置，作为 git 的基础配置，作用是告诉 git 你是谁，你输入的信息将出现在你创建的提交中，使用下面两条命令
+    + git config --global user.name "你的名字或昵称"
+    + git config --global user.email "你的邮箱"
+    + git init
+    + git remote add origin https://github.com/hatong/my-first.git
+    + git clone https://github.com/hatong/my-first.git
 ------------------------------------------------------------
 # 近期总结：
 - cookie and session /  sessionStorage and localStorage

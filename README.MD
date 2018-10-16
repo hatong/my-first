@@ -40,6 +40,8 @@
 - ajax(Asynchronous JavaScript and XML)原理(xmlHttpRequest)
 - 前端跨域(同源策略->ip,域名，端口号都能造成跨域) (服务器反向代理；与正向代理的区别？)
     + script标签 / JsonP / iframe / websocket/ 服务器反向代理/ CORS
+- websocket ：是一种双向通信协议。在建立连接后，WebSocket服务器端和客户端都能主动向对方发送或接收数据，就像Socket一样；WebSocket需要像TCP一样，先建立连接，连接成功后才能相互通信。
+    + new WebSocket()/onopen /send /onmessage /onclose ; 这些只是客户端(前端)的接口，服务器端也要创建websocet对象然后监听想要地址端口读写发送数据
 - web lazyload 懒加载，web优化
 - 模块化开发 AMD（requireJs,前置依赖，加载方便）/ CMD (seaJs，就近依赖，开发方便)
     + AMD:	define(['./a', './b'], function(a, b) {...})

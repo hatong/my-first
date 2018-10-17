@@ -55,7 +55,8 @@
     + CommonJS：是Node.js使用的模块化标准
     + ES6 ： export/import
 - ES6 / webpack/ bable / postCss
-- vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex（vuex核心是store），
+- ES6 的 Proxy 方法 (对目标对象设置一层“拦截”) 需要了解，vue3 的响应式由Object.defineProperty()修改为Proxy，当然对于ie11 底层仍然是Object.defineProperty 响应
+- vue2.x ：双向绑定，watcher，setter，异步队列更新,生命周期，vuex（vuex核心是store）
 - vue
     + 首次加载慢的优化方案：懒加载，分离框架库
 - vue

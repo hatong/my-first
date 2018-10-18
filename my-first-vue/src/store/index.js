@@ -15,7 +15,9 @@ const state = {
   author:'hatong',
 };
 
-const getters = {};
+const getters = {
+//  类似computed,通过strore.getters.XX调用
+};
 
 const mutations = {
   updateLoadingState(state, data) {

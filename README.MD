@@ -77,7 +77,7 @@
 - cookie 和 session
 - post 和 get 区别；http请求方式除了post 和 get，还有HEAD,PUT,DELETE,OPTIONS,TRACE,CONNECT
 - js设计模式：单例模式，工厂模式，观察者模式，组合模式.  vue使用的是观察者模式（通常又被称作为发布-订阅者模式）（Observer->Dep->Watcher）
-- js关于数组的操作API值得留意：split(数组转字符串，注意这与join相反，join是array to string)，splice（删除或添加数组元素），slice（截取数组），push(),pop(),shift(),unshift()，concat等等
+- js关于数组的操作API值得留意：split(字符串转数组，注意这与join相反，join是array to string)，splice（删除或添加数组元素），slice（截取数组），push(),pop(),shift(),unshift()，concat，sort()等等
 - js 数组相关：不改变原数组，返回新的数组：通过concat和 slice(0)方法，返回一个副本数组，这样修改副本数组的时候，不会修改原数组。<br>tip:传统的直接将数组赋值给一个变量，只是将数组的引用（我认为是指针）赋值给变量，改变被赋值的变量时，原数组的值跟着被修改，这是受限于js对象原理。类似上面说的vue直接修改数组或者对象的值是不能触发双向绑定的。
 - 事件队列，事件循环，宏任务，微任务
 - 编程思想：声明式编程 / 命令式编程

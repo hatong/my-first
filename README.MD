@@ -78,7 +78,7 @@
 - 开发模式：MVC / MVVM
 - 前端脚手架知识， vue-cli
 - 从输入url到浏览器渲染过程：
-    + 查询host，查询DNS，与服务器四次握手三次挥手，加载数据，渲染树，DOM树
+    + 查询host，查询DNS，与服务器三次握手四次挥手，加载数据，渲染树，DOM树
 - cookie 和 session
 - post 和 get 区别；http请求方式除了post 和 get，还有HEAD,PUT,DELETE,OPTIONS,TRACE,CONNECT
 - js设计模式：单例模式，工厂模式，观察者模式，组合模式.  vue使用的是观察者模式（通常又被称作为发布-订阅者模式）（Observer->Dep->Watcher）

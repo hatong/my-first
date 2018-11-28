@@ -38,7 +38,7 @@
     + 函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象;
     + 箭头函数没有自己的this,不能用作构造函数，也就是说，不可以使用new命令
     + 不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替
--flex布局 ：
+- flex布局 ：
     + flex-direction/ flex-wrap/ flex-flow/ justify-content/ align-items/ align-content
     + flex:1 ===>   flex-grow |  flex-shrink | flex-basis = 1 1 auto;
 - H5语义化标签、H5新标签（canvas，video）、web可访问性(web Accessibility)

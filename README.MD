@@ -80,6 +80,7 @@
 - 从输入url到浏览器渲染过程：
     + 查询host，查询DNS，与服务器三次握手四次挥手，加载数据，渲染树，DOM树
 - cookie 和 session
+    + php session 销毁： session_destroy(); //清空以创建的所有SESSION || session_unset("session_name");//清空指定的session ||  unset($_SESSION["name"]);//清空指定的session
 - post 和 get 区别；http请求方式除了post 和 get，还有HEAD,PUT,DELETE,OPTIONS,TRACE,CONNECT
 - js设计模式：单例模式，工厂模式，观察者模式，组合模式.  vue使用的是观察者模式（通常又被称作为发布-订阅者模式）（Observer->Dep->Watcher）
 - js关于数组的操作API值得留意：split(字符串转数组，注意这与join相反，join是array to string)，splice（删除或添加数组元素），slice（截取数组），push(),pop(),shift(),unshift()，concat，sort()等等

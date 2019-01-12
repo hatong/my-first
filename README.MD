@@ -101,6 +101,7 @@
 - css预处理语言
     +sass 智迈
     +less 讯飞
+- js获取元素统一用 document.querySelector 方法
 # 前端优化方案：
 - 减少HTTP请求，基本原理（网速相同的条件下，下载一个100KB的图片比下载两个50KB的图片要快。所以，请减少HTTP请求）
     + 合并图片（css sprites），合并CSS和JS文件；图片较多的页面也可以使用 lazyLoad 等技术进行优化

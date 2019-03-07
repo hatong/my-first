@@ -113,6 +113,8 @@
 - 精简CSS和JS文件
 - 数据缓存 cookie、session、sessionStorage、localStorage
 
+#css
+- pointer-event属性关注
  --------------------------------------------------------
  - 关于react 和 vue的比较，个人理解（有待更新）：
     + vue学习成本确实比较低，易于上手。vue采用观察者模式，对每个组件进行监听，只改需要改的部分（去重后）
